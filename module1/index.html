@@ -52,11 +52,6 @@
                 padding: 10px;
                 color: rgb(51, 203, 38);
             }
-            #caution{
-                border: 3px solid  rgb(203, 177, 38);
-                padding: 10px;
-                color: rgb(203, 177, 38);
-            }
             .submit{
                 border: 2.5px solid rgb(10, 52, 18);
                 background-color: rgba(12, 167, 30, 0.46);
@@ -82,9 +77,9 @@
             <input placeholder="Enter Food Items" type="text" ng-model="name"> <br>
             <div style="margin-bottom: 120px; color:white; font-size: 18px">(Not considering commas here)</div>
             <a class="submit" href='#' ng-click="countFood()"> Submit </a><br><br><br>
-            <span class="comment" id="positive" ng-if="flag === 1">Good to go</span>
-            <span class="comment" id="negative" ng-if="flag === 2">Not good to go</span>
-            <span class="comment" id="caution" ng-if="flag === 3">Please fill in values</span>
+            <span class="comment" id="positive" ng-if="flag === 1">Enjoy!</span>
+            <span class="comment" id="positive" ng-if="flag === 2">Too Much!</span>
+            <span class="comment" id="negative" ng-if="flag === 3">Please Enter Data First</span>
             <br><br><br>&ensp;
         </div>
     </body>
