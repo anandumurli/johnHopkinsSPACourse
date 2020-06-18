@@ -4,14 +4,88 @@
         <script src="angular.min.js"></script>
         <script src="app.js"></script>
         <title>Module 1</title>
+        <style>
+            body{
+                margin: 0;
+                background-color: black;
+            }
+            h2{
+                margin-top: 0;
+                padding-top: 80px;
+                padding-bottom: 120px;
+                color: rgb(247, 209, 80);
+            }
+            .mainBody{
+                
+                text-align: center;
+                max-height:100vh;
+                max-width:100%;
+                background: linear-gradient(rgba(142, 99, 3, 0.73),rgba(0, 0, 0, 0.76)),url(bgBackgrnd.jpg);
+                background-size: cover;
+                font-size: 25px;
+           }
+            input[type="text"]{
+                width: 75%;
+                color: rgba(229, 172, 14, 0.85);
+                border: none; 
+                height: 50px;
+                text-align: center;   
+                outline: solid rgba(150, 110, 0, 0.85);
+                font-family: sans-serif;
+                font-size: 25px;
+                background-color: rgba(59, 50, 20, 0.56);
+                margin-bottom: 8px;
+            }
+            ::placeholder{
+                color:rgba(150, 110, 0, 0.85);
+            }
+            .comment{
+                margin-top: 10px;
+            }
+            #negative{
+                border: 3px solid  rgb(203, 38, 38);
+                padding: 10px;
+                color:  rgb(203, 38, 38);
+            }
+            #positive{
+                border: 3px solid  rgb(51, 203, 38);
+                padding: 10px;
+                color: rgb(51, 203, 38);
+            }
+            #caution{
+                border: 3px solid  rgb(203, 177, 38);
+                padding: 10px;
+                color: rgb(203, 177, 38);
+            }
+            .submit{
+                border: 2.5px solid rgb(10, 52, 18);
+                background-color: rgba(12, 167, 30, 0.46);
+                padding: 10px;
+                font-weight: 500;
+                text-decoration: none;
+                color:  rgb(10, 52, 18);
+            }
+            .submit:hover{
+                border: 2.5px solid rgb(10, 52, 18);
+                background-color: rgba(12, 167, 30, 0.7);
+                padding: 10px;
+                font-weight: 500;
+                text-decoration: none;
+                color:  rgb(10, 52, 18);
+            }
+        </style>
     </head>
     <body>
-        <h3>Eat Healty</h3>
-        <div ng-controller="healtyEating">
-            Enter Food items Here &ensp;
-            <input title="Not considering commas" type="text" ng-model="name"> &ensp;
-            <a href='#' ng-click="funckx()"> click me</a>
-            <span>Done baby comments here {{name}}</span>
+        <div class="mainBody" ng-controller="healtyEating">
+            <h2>Eat Healthy</h2>
+            <div style="margin-bottom: 25px; color: rgb(222, 168, 21)">Enter Food items Here</div>
+            <input placeholder="Enter Food Items" type="text" ng-model="name"> <br>
+            <div style="margin-bottom: 120px; color:white; font-size: 18px">(Not considering commas here)</div>
+            <a class="submit" href='#' ng-click="countFood()"> Submit </a><br><br><br>
+            <span class="comment" id="positive" ng-if="flag === 1">Good to go</span>
+            <span class="comment" id="negative" ng-if="flag === 2">Not good to go</span>
+            <span class="comment" id="caution" ng-if="flag === 3">Please fill in values</span>
+            <br><br><br>&ensp;
         </div>
     </body>
 </html>
